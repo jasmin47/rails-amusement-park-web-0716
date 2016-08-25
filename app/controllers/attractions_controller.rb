@@ -15,8 +15,13 @@ class AttractionsController < ApplicationController
   end
 
   def index
+    @attractions = Attraction.all
   end
 
   def show
+    @user = User.find(session[:user_id])
+    @attraction = Attraction.find(params[:id])
+    # binding.pry
   end
+
 end
