@@ -22,6 +22,7 @@ class AttractionsController < ApplicationController
     @user = User.find(session[:user_id])
     @attraction = Attraction.find(params[:id])
     # binding.pry
+    @ride = Ride.create(user_id: @user.id, attraction_id: @attraction.id)
   end
 
 end
